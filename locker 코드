@@ -1,8 +1,8 @@
 cls
 @ECHO OFF
-title Folder HasTag_Locker
+title Folder Locker
 if EXIST "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}" goto UNLOCK
-if NOT EXIST HasTag_Locker goto MDLOCKER
+if NOT EXIST Locker goto MDLOCKER
 :CONFIRM
 echo Are you sure u want to Lock the folder(Y/N)
 set/p "cho=>"
@@ -13,7 +13,7 @@ if %cho%==N goto END
 echo Invalid choice.
 goto CONFIRM
 :LOCK
-ren HasTag_Locker "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
+ren Locker "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
 attrib +h +s "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
 echo Folder locked
 goto End
@@ -22,14 +22,17 @@ echo Enter password to Unlock folder
 set/p "pass=>"
 if NOT %pass%==1234 goto FAIL
 attrib -h -s "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}"
-ren "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}" HasTag_Locker
+ren "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}" Locker
 echo Folder Unlocked successfully
 goto End
 :FAIL
 echo Invalid password
 goto end
 :MDLOCKER
-md HasTag_Locker
-echo HasTag_Locker created successfully
+md Locker
+cd Locker
+md C_FILE
+md D_FILE
+echo Locker created successfully
 goto End
 :End
