@@ -28,11 +28,4 @@ goto End
 :FAIL
 echo Invalid password
 goto end
-:MDLOCKER
-md Locker
-cd Locker
-md C_FILE
-md D_FILE
-echo Locker created successfully
-goto End
 :End
