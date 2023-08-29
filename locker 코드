@@ -4,12 +4,10 @@ title Folder Locker
 if EXIST "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}" goto UNLOCK
 if NOT EXIST Locker goto MDLOCKER
 :CONFIRM
-echo 폴더를 잠금하시겠어요?(Y/N)
+echo 폴더를 잠금하시겠어요?(y/n)
 set/p "choice=>"
-if %choice%==Y goto LOCK
 if %choice%==y goto LOCK
 if %choice%==n goto END
-if %choice%==N goto END
 echo 부적절한 문자입니다
 goto CONFIRM
 :LOCK
